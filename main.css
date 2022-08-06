@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
 :root {
-    --white: hsl(0, 0%, 100%);
-    --light-gray: hsl(212, 45%, 89%);
-    --grayish-blue: hsl(220, 15%, 55%);
-    --dark-blue: hsl(218, 44%, 22%) ;
+    --clr-primary: hsl(179, 62%, 43%);
+    --clr-accent: hsl(71, 73%, 54%);
+    --clr-text-bg: hsla(217, 22%, 67%, 0.3);
+    --clr-text-plans: hsl(204, 43%, 93%);
+    --clr-text-intro: hsl(217, 22%, 67%);
 }
 
 * {
@@ -10,37 +13,103 @@
 }
 
 body {
-    background-color: var(--light-gray);
-    font-family: 'Outfit', sans-serif;
-    font-size: 15px;
+    font-family: 'Karla', sans-serif;
+    margin: 0;
+    font-weight: 700;
 }
 
 .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.card {
-    display: flex;
     flex-direction: column;
-    max-width: 300px;
-    background-color: var(--white);
-    padding: 1.2rem;
-    border-radius: 1rem;
-    text-align: center;
 }
 
-.heading {
-    color: var(--dark-blue);
+.community-intro {
+    margin: 2rem 3rem;
 }
 
-.qrcode {
-    border-radius: 10px;
+.community-heading {
+    color: var(--clr-primary);
 }
 
-.description {
-    color: var(--grayish-blue);
-    margin-top: 0;
+.community-subheading {
+    color: var(--clr-accent);
+}
+
+.community-description {
+    color: var(--clr-text-intro);
+}
+
+.community-details {
+    display: flex;
+    background-color: var(--clr-primary);
+    color: var(--clr-text-plans);
+}
+
+.community-details > * {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    padding: 3rem;
+}
+
+.community-details h3 {
+    margin: 0;
+}
+
+.price-plans button {
+    color: var(--clr-text-plans);
+    background-color: var(--clr-accent);
+    cursor: pointer;
+    padding: 1rem 2rem;
+    display: inline-block;
+    width: 100%;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 0.6rem;
+}
+
+.price-per-month .price{
+    font-size: 2rem;
+    vertical-align: middle;
+}
+
+.price-per-month .per-month {
+    vertical-align: middle;
+    color: var(--clr-text-plans);
+    opacity: 0.5;
+}
+
+.community-benefits {
+    background-color: var(--clr-text-bg);
+}
+
+.community-benefits ul {
+    list-style: none;
+    padding: 0;
+    opacity: 0.6;
+}
+
+.community-benefits li {
+    margin-bottom: 0.2rem;
+}
+
+@media(max-width: 40rem) {
+
+    .community-intro {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .community-description {
+        line-height: 1.5;
+    }
+
+    .community-details {
+        flex-direction: column;
+    }
+
+    .community-details > * {
+        padding: 2rem;
+    }
 }
